@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-//changed movies to users below
+//changed movies to events below
 mongoose.connect('mongodb://localhost/users', {useNewUrlParser: true});
 
 var db = mongoose.connection;
