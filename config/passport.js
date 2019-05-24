@@ -13,7 +13,7 @@ passport.use(new GoogleStrategy({
         if (err) return cb(err);
         if (user) {
             // returning user
-            return cb(null, student);
+            return cb(null, user);
         } else {
             // we have a brand new user
             var newUser = new User({
