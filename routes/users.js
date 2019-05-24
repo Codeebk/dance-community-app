@@ -3,7 +3,7 @@ var usersCtrl = require('../controllers/users');
 
 // GET /users
 
-router.get('/users', usersCtrl.index);
+router.get('/', usersCtrl.index);
 
 // POST /facts
 // We will already have access to the logged in student on
