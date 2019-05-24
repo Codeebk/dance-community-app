@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 //changed movies to events below
-mongoose.connect('mongodb://localhost/users', {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true});
 
 var db = mongoose.connection;
 
