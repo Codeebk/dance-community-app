@@ -1,18 +1,18 @@
 var router = require('express').Router();
-var usersCtrl = require('../controllers/users');
+var eventsCtrl = require('../controllers/events');
 
 // GET /users
 
-router.get('/', usersCtrl.index);
+router.get('/', eventsCtrl.index);
 
 // POST /facts
 // We will already have access to the logged in student on
 // the server, therefore do not use: /users
 // /:id/facts
-router.post('/facts', isLoggedIn, usersCtrl.addFact);
+router.post('/events', isLoggedIn, eventsCtrl.addEvent);
 
 // DELETE /facts/:id
-router.delete('/facts/:id', usersCtrl.delFact);
+router.delete('/events/:id', eventsCtrl.delEvent);
 
 function isLoggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();

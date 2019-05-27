@@ -1,9 +1,10 @@
-const User = require('../models/user');
+// const User = require('../models/user');
+const Event = require('../models/event')
 
 module.exports = {
   index,
-  addFact,
-  delFact
+  addEvent,
+  delEvent
 };
 
 function index(req, res, next) {
@@ -13,11 +14,11 @@ function index(req, res, next) {
   let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
   // Default to sorting by name
   let sortKey = req.query.sort || 'name';
-  User.find(modelQuery)
+  Event.find(modelQuery)
   .sort(sortKey).exec(function(err, users) {
     if (err) return next(err);
     // Passing search values, name & sortKey, for use in the EJS
-    res.render('users/index', {
+    res.render('events/index', {
       users,
       user: req.user,
       name: req.query.name,
@@ -26,18 +27,18 @@ function index(req, res, next) {
   });
 }
 
-function addFact(req, res, next) {
-  req.user.facts.push(req.body);
+function addEvent(req, res, next) {
+  req.user.events.push(req.body);
   req.user.save(function(err) {
-    res.redirect('/users');
+    res.redirect('/events');
   });
 }
 
-function delFact(req, res, next) {
-  User.findOne({'facts._id': req.params.id}, function(err, user) {
-    user.facts.id(req.params.id).remove();
+function delEvent(req, res, next) {
+  User.findOne({'events._id': req.params.id}, function(err, user) {
+    user.events.id(req.params.id).remove();
     user.save(function(err) {
-      res.redirect('/users');
+      res.redirect('/events');
     });
   });
 }

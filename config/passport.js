@@ -1,6 +1,7 @@
 const passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
-var User = require('../models/user');
+// var Event = require('../models/event');
+var User = require('../models/event')
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
