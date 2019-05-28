@@ -33,11 +33,22 @@ function newEvent(req, res) {
 }
 
 function addEvent(req, res, next) {
-     req.user.events.push(req.body);
-    req.user.save(function(err) {
-    res.redirect('/events');
-   });
- }
+    var event = new Event(req.body);
+    event.save(function(err) {
+      if (err) {
+        console.log(err);
+        return res.redirect('/events');
+      }
+      res.redirect('/events');
+    });
+  }
+
+
+    //  req.user.events.push(req.body);
+    // req.user.save(function(err) {
+    // res.redirect('/events');
+//    });
+//  }
 
 function delEvent(req, res, next) {
   User.findOne({'events._id': req.params.id}, function(err, user) {
