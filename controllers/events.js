@@ -33,10 +33,10 @@ function newEvent(req, res) {
 }
 
 function addEvent(req, res, next) {
-    req.user.events.push(req.body);
+     req.user.events.push(req.body);
     req.user.save(function(err) {
     res.redirect('/events');
-  });
+   });
  }
 
 function delEvent(req, res, next) {

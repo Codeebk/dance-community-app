@@ -21,7 +21,7 @@
 <h3>Create a New Event</h3>
 
 <div class="row">
-    <form class="col s12">
+    <form class="col s12" method="POST" action="./events" onsubmit="return addEvent()">
       <div class="row">
         <div class="input-field col s6">
           <input id="first_name" type="text" class="validate">
@@ -60,7 +60,7 @@
           </div>
         </div>
       </div>
-      <div>  <button class="btn waves-effect waves-light" type="submit" name="action" onsubmit="addEvent()">Post Event
+      <div>  <button class="btn waves-effect waves-light" type="submit" name="action">Post Event
         <i class="material-icons left">add</i>
       </button></div>
     </form>
