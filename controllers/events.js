@@ -4,7 +4,8 @@ const Event = require('../models/event')
 module.exports = {
   index,
   newEvent,
-  delEvent
+  delEvent,
+  addEvent
 };
 
 function index(req, res, next) {
@@ -31,12 +32,12 @@ function newEvent(req, res) {
   res.render('events/new', { title: 'Add Event'});
 }
 
-// function addEvent(req, res, next) {
-//   req.user.events.push(req.body);
-//   req.user.save(function(err) {
-//     res.redirect('/events');
-//   });
-// }
+function addEvent(req, res, next) {
+    req.user.events.push(req.body);
+    req.user.save(function(err) {
+    res.redirect('/events');
+  });
+ }
 
 function delEvent(req, res, next) {
   User.findOne({'events._id': req.params.id}, function(err, user) {

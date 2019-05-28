@@ -1,7 +1,7 @@
 var router = require('express').Router();
 var eventsCtrl = require('../controllers/events');
 
-// GET /users
+// GET /events
 
 router.get('/', eventsCtrl.index);
 router.get('/new', eventsCtrl.newEvent);
@@ -12,7 +12,7 @@ router.get('/new', eventsCtrl.newEvent);
 // /:id/facts
 
 
-router.post('/events', isLoggedIn, eventsCtrl.newEvent);
+router.post('/events', isLoggedIn, eventsCtrl.addEvent);
 
 // DELETE /facts/:id
 router.delete('/events/:id', eventsCtrl.delEvent);

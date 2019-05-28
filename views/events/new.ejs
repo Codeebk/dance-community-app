@@ -7,10 +7,18 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Materialize CSS Framework -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
   <!-- JavaScript for Materialize -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
+
+<!-- <form name="myForm" onsubmit="return validateForm()" method="POST" action="login.php" >         
+    <input type="text" name="username" id="username" />
+    <input type="password" name="password" id="password" />
+    <input type="submit" name="submitBt"value="LogIn" />
+</form> -->
+
+<h3>Create a New Event</h3>
 
 <div class="row">
     <form class="col s12">
@@ -52,6 +60,9 @@
           </div>
         </div>
       </div>
+      <div>  <button class="btn waves-effect waves-light" type="submit" name="action" onsubmit="addEvent()">Post Event
+        <i class="material-icons left">add</i>
+      </button></div>
     </form>
   </div>
         
