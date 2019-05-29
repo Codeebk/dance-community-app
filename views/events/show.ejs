@@ -38,7 +38,7 @@
     </ul> -->
 
     <div class="row">
-            <form class="col s12" method="POST" action="/events">
+            <form class="col s12" method="PUT" action="/events/<%= event._id %>?_method=PUT">
               <div class="row">
                 <div class="input-field col s6">
                   <input type="text" name="title" class="validate" placeholder="<%= event.title %>">

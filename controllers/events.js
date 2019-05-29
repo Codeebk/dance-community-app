@@ -6,7 +6,9 @@ module.exports = {
   new: newEvent,
   delEvent,
   create,
-  show
+  show,
+  updateEvent
+
 };
 
 function index(req, res, next) {
@@ -46,12 +48,15 @@ function create(req, res, next) {
     });
   }
 
+  function updateEvent() {
+    Event.updateOne({_id :
+    req.params.id}).then(function() {
+      res.redirect('/');
+    });
+  }
 
-    //  req.user.events.push(req.body);
-    // req.user.save(function(err) {
-    // res.redirect('/events');
-//    });
-//  }
+
+
 function delEvent(req, res, next) {
   Event.deleteOne({_id : req.params.id}).then(function(){
     res.redirect('/');

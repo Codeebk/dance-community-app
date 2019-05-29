@@ -59,10 +59,11 @@
           <td><%= e.time %></td>
           <td><%= e.location %></td>
           <td><%= e.description %></td>
-          <td><a href="/events/<%= e._id %>">Edit</a></td>
-          <!-- <td><form action="/events/<%= e._id %>?_method=DELETE" method="POST">
-          <button type="submit">Delete</button>
-          </form></td> -->
+
+          <td>
+              <% if (user) { %>
+            <a href="/events/<%= e._id %>">Edit</a></td>
+            <% } %>
         </tr>
      <% }); %>
     </tbody>
