@@ -1,11 +1,12 @@
-// const User = require('../models/user');
+// const User = require('../models/event');
 const Event = require('../models/event')
 
 module.exports = {
   index,
   new: newEvent,
   delEvent,
-  create
+  create,
+  show
 };
 
 function index(req, res, next) {
@@ -36,18 +37,32 @@ function create(req, res, next) {
     });
   }
 
+  function show(req, res) {
+    Event.findById(req.params.id, function(err, event) {
+      res.render('events/show', {
+        user: req.user,
+        event
+      });
+    });
+  }
+
 
     //  req.user.events.push(req.body);
     // req.user.save(function(err) {
     // res.redirect('/events');
 //    });
 //  }
-
 function delEvent(req, res, next) {
-  User.findOne({'events._id': req.params.id}, function(err, user) {
-    user.events.id(req.params.id).remove();
-    user.save(function(err) {
-      res.redirect('/events');
-    });
-  });
+  Event.deleteOne({_id : req.params.id}).then(function(){
+    res.redirect('/');
+  }
+  );
 }
+// function delEvent(req, res, next) {
+//   Event.findOne({'event._id': req.params.id}, function(err, event) {
+//     event.id(req.params.id).remove();
+//     event.save(function(err) {
+//       res.redirect('/events');
+//     });
+//   });
+// }

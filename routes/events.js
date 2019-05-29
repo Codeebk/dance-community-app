@@ -5,6 +5,7 @@ var eventsCtrl = require('../controllers/events');
 
 router.get('/', eventsCtrl.index);
 router.get('/new', eventsCtrl.new);
+router.get('/:id', eventsCtrl.show);
 
 // POST /facts
 // We will already have access to the logged in student on
@@ -12,10 +13,10 @@ router.get('/new', eventsCtrl.new);
 // /:id/facts
 
 
-router.post('/events', isLoggedIn, eventsCtrl.create);
+router.post('/', isLoggedIn, eventsCtrl.create);
 
 // DELETE /facts/:id
-router.delete('/events/:id', eventsCtrl.delEvent);
+router.delete('/:id', eventsCtrl.delEvent);
 
 function isLoggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();

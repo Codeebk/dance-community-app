@@ -39,6 +39,7 @@
   <table>
     <thead>
       <tr>
+        <th>date</th>
         <th>title</th>
         <th>company</th>
         <th>choreographer</th>
@@ -51,9 +52,10 @@
       <% event.forEach(function(e) { %>
         <tr>
           <td><%= e.title %></td>
-          <td><form action="/events/<%= e._id %>?_method=DELETE" method="POST">
+          <td><a href="/events/<%= e._id %>">Edit</a></td>
+          <!-- <td><form action="/events/<%= e._id %>?_method=DELETE" method="POST">
           <button type="submit">Delete</button>
-          </form></td>
+          </form></td> -->
         </tr>
      <% }); %>
     </tbody>
