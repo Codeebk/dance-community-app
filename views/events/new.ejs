@@ -21,42 +21,42 @@
 <h3>Create a New Event</h3>
 
 <div class="row">
-    <form class="col s12" method="POST" action="./events" onsubmit="return addEvent()">
+    <form class="col s12" method="POST" action="./events">
       <div class="row">
         <div class="input-field col s6">
-          <input id="title" type="text" class="validate">
+          <input type="text" name="title" class="validate">
           <label for="title">Performance Title</label>
         </div>
         <div class="input-field col s6">
-          <input id="company_name" type="text" class="validate">
+          <input id="company_name" type="text" name="company" class="validate">
           <label for="company_name">Company Name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input id="choreographer" type="text" class="validate">
+          <input id="choreographer" type="text" name ="choreographer"class="validate">
           <label for="choreographer">Choreographer/s</label>
         </div>
 
         <div class="input-field col s6">
-          <input id="location" type="text" class="validate" placeholder="Please enter a full address">
+          <input id="location" type="text" name="location" class="validate" placeholder="Please enter a full address">
           <label for="location">Location</label>
         </div>
      
       
       <div class="row">
         <div class="input-field col s12">
-          <input id="description" type="text" class="validate">
+          <input id="description" type="text" name="description" class="validate">
           <label for="description">Description</label>
         </div>
       </div>
       <div class="row">
             <div class="input-field col s6">
-              <input id="date" type="date" class="validate">
+              <input id="date" type="date" name="date" class="validate">
               <label for="date">Date</label>
             </div>
             <div class="input-field col s6">
-              <input id="time" type="time" class="validate">
+              <input id="time" type="time" name="time" class="validate">
               <label for="time">Time</label>
             </div>
           </div>

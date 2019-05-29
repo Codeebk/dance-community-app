@@ -35,6 +35,29 @@
     </nav>
   </div>
 
+  <h3>Title</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>company</th>
+        <th>choreographer</th>
+        <th>description</th>
+        <th>location</th>
+        <th>time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% event.forEach(function(e) { %>
+        <tr>
+          <td><%= e.title %></td>
+          <td><form action="/events/<%= e._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+          </form></td>
+        </tr>
+     <% }); %>
+    </tbody>
+  </table>
 
   </body>
 </html>
