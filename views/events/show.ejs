@@ -13,13 +13,79 @@
 </head>
 <body>
     
-    <h3>Details</h3>
-    <ul>
+    <h4>Details</h4>
+    <!-- <ul>
+        <li><h5>Title:</h5></li>
         <li><%= event.title %></li>
-    </ul>
+
+        <li><h5>Choreographer:</h5></li>
+        <li><%= event.choreographer %></li>
+
+        <li><h5>Company:</h5></li>
+        <li><%= event.company %></li>
+
+        <li><h5>Date:</h5></li>
+        <li><%= event.date %></li>
+
+        <li><h5>Time:</h5></li>
+        <li><%= event.time %></li>
+
+        <li><h5>Location:</h5></li>
+        <li><%= event.location %></li>
+
+        <li><h5>Description:</h5></li>
+        <li><%= event.description %></li>
+    </ul> -->
+
+    <div class="row">
+            <form class="col s12" method="POST" action="/events">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input type="text" name="title" class="validate" placeholder="<%= event.title %>">
+                  <label for="title">Performance Title</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="company_name" type="text" name="company" class="validate" placeholder="<%= event.name %>">
+                  <label for="company_name">Company Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="choreographer" type="text" name ="choreographer"class="validate" placeholder="<%= event.choreographer %>">
+                  <label for="choreographer">Choreographer/s</label>
+                </div>
+        
+                <div class="input-field col s6">
+                  <input id="location" type="text" name="location" class="validate" placeholder="<%= event.location %>">
+                  <label for="location">Location</label>
+                </div>
+             
+              
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="description" type="text" name="description" class="validate" placeholder="<%= event.description %>">
+                  <label for="description">Description</label>
+                </div>
+              </div>
+              <div class="row">
+                    <div class="input-field col s6">
+                      <input id="date" type="date" name="date" class="validate" placeholder="<%= event.date %>">
+                      <label for="date">Date</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input id="time" type="time" name="time" class="validate" placeholder="<%= event.time %>">
+                      <label for="time">Time</label>
+                    </div>
+                  </div>
+              <div class="row">
+              </div>
+              <div>  <button class="btn waves-effect waves-light" type="submit" name="action">Modify Event
+                <i class="material-icons left">add</i>
+              </button></div>
+            </form>
 
     <form action="/events/<%= event._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Delete Event</button>
     </form>
 </body>
 </html>
