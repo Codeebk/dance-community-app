@@ -2,22 +2,19 @@ var router = require('express').Router();
 var eventsCtrl = require('../controllers/events');
 
 // GET /events
-
+//this is the main events page calls render
 router.get('/', eventsCtrl.index);
+// this call render and shows the new.ejs
 router.get('/new', eventsCtrl.new);
-router.get('/:id', eventsCtrl.show);
-
-//UPDATE /events
-router.put('update/:id', eventsCtrl.updateEvent);
-
-// POST /events
-// We will already have access to the logged in student on
-// the server, therefore do not use: /users
-// /:id/facts
 
 
+
+
+//creates an event and redirects to the home page
 router.post('/', isLoggedIn, eventsCtrl.create);
-
+//UPDATE /events update events and all routes with a /:id must be at the bottom prevent other urls from blocking them
+router.get('/:id', eventsCtrl.show);
+router.post('/:id', eventsCtrl.updateEvent);
 // DELETE /facts/:id
 router.delete('/:id', eventsCtrl.delEvent);
 
