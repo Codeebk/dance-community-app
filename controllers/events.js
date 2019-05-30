@@ -49,9 +49,15 @@ function create(req, res, next) {
   }
 
   function updateEvent(req, res, next) {
-    Event.updateOne({_id : req.params.id}).then(function() {
-      res.redirect('/');
-    });
+    console.log(req.body)
+    Event.findById(req.params.id)
+    .then(event => {
+      event = new Event(req.body)
+      event.save()
+      res.redirect('/')
+     
+    })
+    .catch(error => console.log(error))
   }
 
 

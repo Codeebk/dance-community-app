@@ -41,39 +41,39 @@
             <form class="col s12" method="POST" action="/events/<%= event._id %>?_method=POST">
               <div class="row">
                 <div class="input-field col s6">
-                  <input type="text" name="title" class="validate" placeholder="<%= event.title %>">
+                  <input type="text" name="title" class="validate" value="<%= event.title %>">
                   <label for="title">Performance Title</label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="company_name" type="text" name="company" class="validate" placeholder="<%= event.company %>">
+                  <input id="company_name" type="text" name="company" class="validate" value="<%= event.company %>">
                   <label for="company_name">Company Name</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s6">
-                  <input id="choreographer" type="text" name ="choreographer"class="validate" placeholder="<%= event.choreographer %>">
+                  <input id="choreographer" type="text" name ="choreographer"class="validate" value="<%= event.choreographer %>">
                   <label for="choreographer">Choreographer/s</label>
                 </div>
         
                 <div class="input-field col s6">
-                  <input id="location" type="text" name="location" class="validate" placeholder="<%= event.location %>">
+                  <input id="location" type="text" name="location" class="validate" value="<%= event.location %>">
                   <label for="location">Location</label>
                 </div>
              
               
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="description" type="text" name="description" class="validate" placeholder="<%= event.description %>">
+                  <input id="description" type="text" name="description" class="validate" value="<%= event.description %>">
                   <label for="description">Description</label>
                 </div>
               </div>
               <div class="row">
                     <div class="input-field col s6">
-                      <input id="date" type="date" name="date" class="validate" placeholder="<%= event.date %>">
+                      <input id="date" type="date" name="date" class="validate" value="<%= event.date %>">
                       <label for="date">Date</label>
                     </div>
                     <div class="input-field col s6">
-                      <input id="time" type="time" name="time" class="validate" placeholder="<%= event.time %>">
+                      <input id="time" type="time" name="time" class="validate" value="<%= event.time %>">
                       <label for="time">Time</label>
                     </div>
                   </div>
