@@ -48,26 +48,16 @@ function create(req, res, next) {
     });
   }
 
-  function updateEvent() {
-    Event.updateOne({_id :
-    req.params.id}).then(function() {
+  function updateEvent(req, res, next) {
+    Event.updateOne({_id : req.params.id}).then(function() {
       res.redirect('/');
     });
   }
 
 
-
 function delEvent(req, res, next) {
   Event.deleteOne({_id : req.params.id}).then(function(){
     res.redirect('/');
-  }
-  );
+  });
 }
-// function delEvent(req, res, next) {
-//   Event.findOne({'event._id': req.params.id}, function(err, event) {
-//     event.id(req.params.id).remove();
-//     event.save(function(err) {
-//       res.redirect('/events');
-//     });
-//   });
-// }
+

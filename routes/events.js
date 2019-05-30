@@ -8,7 +8,7 @@ router.get('/new', eventsCtrl.new);
 router.get('/:id', eventsCtrl.show);
 
 //UPDATE /events
-router.get('/events/:id/edit', eventsCtrl.updateEvent);
+router.put('update/:id', eventsCtrl.updateEvent);
 
 // POST /events
 // We will already have access to the logged in student on
