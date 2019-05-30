@@ -17,6 +17,7 @@ var eventSchema = new mongoose.Schema({
   description: String,
   location: String,
   time: String,
+  date: String
   // user: [userSchema]
 }, {
   timestamps: true
