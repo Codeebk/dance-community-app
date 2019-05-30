@@ -11,11 +11,19 @@
   <!-- JavaScript for Materialize -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-<body class="container">
+<body>
+
+        <div class="navbar-fixed">
+                <nav>
+                  <div class="nav-wrapper teal">
+                    <a href="/" class="brand-logo left">Austin Dance Events</a>
+        
+                  </div>
+                </nav>
+            </div>
+    <div class="container">
     
     <h5 class="center-align">Modify Event</h5>
-
-
     <div class="row">
             <form class="col s12" method="POST" action="/events/<%= event._id %>?_method=POST">
               <div class="row">
@@ -66,5 +74,6 @@
     <form action="/events/<%= event._id %>?_method=DELETE" method="POST">
     <button class="btn waves-effect waves-light red darken-1" type="submit" name="action">Delete<i class="material-icons left">delete_forever</i></button>
     </form>
+</div>    
 </body>
 </html>
