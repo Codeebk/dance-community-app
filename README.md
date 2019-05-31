@@ -11,6 +11,10 @@
 JavaScript  
 CSS  
 HTML
+Node.js
+Express
+MongoDB
+Materialize
 
 ## Planning
 Trello Board- https://trello.com/b/VCGlFBZv/unit-2-project-dance-community
@@ -24,3 +28,9 @@ Visit Austin Dance Events- https://austin-dance-events.herokuapp.com/events
 
 ## Next Steps
 User is able to only edit an event that they posted
+Responsive
+Require user to input all details before creating event
+Display events in chronological order
+Correct styling of homepage before a user is logged in (formatting is correct once logged in)
+Add footers
+Correct update event functionality to work as it did in previous table format. Right now the events page is displaying 2 cards for an event (the old version and the new version.)
