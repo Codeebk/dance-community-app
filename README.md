@@ -16,6 +16,11 @@ HTML
 Trello Board- https://trello.com/b/VCGlFBZv/unit-2-project-dance-community
 
 ## Getting Started
+Visit Austin Dance Events- https://austin-dance-events.herokuapp.com/events
+
+## Screenshots
+![Imgur](https://i.imgur.com/Tjeg1k6.png)
+![Imgur](https://i.imgur.com/j2N09Vf.png)
 
 ## Next Steps
-
+User is able to only edit an event that they posted
